@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import connectToDatabase from "../../../../lib/config/db.connection";
 import Product from "../../../../models/productSchema";
 

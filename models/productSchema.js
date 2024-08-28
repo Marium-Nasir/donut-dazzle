@@ -14,17 +14,17 @@ const productSchema = new mongoose.Schema(
     productImage: { type: String },
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: User,
+      ref: "User",
       default: null,
     },
     updatedBy: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: User,
+      ref: "User",
       default: null,
     },
     deletedBy: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: User,
+      ref: "User",
       default: null,
     },
   },

@@ -19,8 +19,8 @@ export default async function connectToDatabase() {
 
   if (!cached.promise) {
     const opts = {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+      // useNewUrlParser: true,
+      // useUnifiedTopology: true,
     };
 
     cached.promise = mongoose.connect(dbURI, opts).then((mongoose) => {

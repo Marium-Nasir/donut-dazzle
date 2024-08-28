@@ -26,7 +26,6 @@ export async function GET(request) {
 
     await connectToDatabase();
     const areas = await Area.find(where);
-    console.log(">>>>>>>>>>>>", areas.length);
 
     if (!areas || !areas.length) {
       return NextResponse.json({ message: "Areas not found" }, { status: 404 });

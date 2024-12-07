@@ -16,8 +16,8 @@ export const protect = async (req, res, next) => {
           .json({ status: 401, message: "Invalid Token", data: null });
       } else if (val === "jwt expired") {
         return res
-          .status(401)
-          .json({ status: 401, message: "Expired Token", data: null });
+          .status(403)
+          .json({ status: 403, message: "Expired Token", data: null });
       }
 
       req.user = await User.findById(val.id).select("-password");

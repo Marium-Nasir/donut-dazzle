@@ -73,7 +73,7 @@ export async function POST(request) {
     const product = await Product.create(productData);
     return NextResponse.json({
       status: 201,
-      message: "Product Created",
+      message: "Product Added Successfully",
       data: product,
     });
   } catch (err) {

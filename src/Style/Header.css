@@ -11,7 +11,7 @@ ul li{
     cursor: pointer;
 }
 
-#btnId{
+.btnId{
     padding: 15%;
     border: 2px solid white;
     border-radius: 1.2rem;

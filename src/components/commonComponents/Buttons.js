@@ -1,10 +1,9 @@
 "use client";
-import "../../Style/Header.css";
-
 export default function Buttons({ props }) {
   return (
     <div>
-      <button onClick={props.click} id="btnId">
+      <button onClick={props?.click} className={props?.classname}>
+        {props.icon && <span className="icon mr-2">{props.icon}</span>}
         {props.btnText}
       </button>
     </div>

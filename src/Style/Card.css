@@ -1,0 +1,82 @@
+.cards-container {
+    width: 100%;
+    background-color: beige;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap */
+    gap: 1.5rem; /* Space between cards */
+    justify-content: center; /* Center the cards horizontally */
+    align-items: center;
+}
+
+.card {
+    flex: 1 1 22%; /* Each card takes up about 22% of the row */
+    max-width: 22%; /* Limit the card width */
+    min-width: 250px; /* Set a minimum width for the card */
+    border: 2px solid rgb(180, 90, 105);
+    border-radius: 1.5rem;
+    padding: 1.5%;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    cursor: pointer;
+}
+
+.img-container {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: large;
+    font-weight: bolder;
+    /* margin-top: 1rem; */
+}
+
+.content-container {
+    padding: 1rem;
+}
+
+.card-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid rgb(180, 90, 105);
+    border-radius: 1.2rem;
+    color: rgb(180, 90, 105);
+    font-weight: bold;
+    margin-top: 1rem;
+    cursor: pointer;
+    background-color: white; 
+    display: flex; 
+    align-items: center; 
+}
+
+.card-btn .icon {
+    margin-right: 0.5rem;
+    color: rgb(180, 90, 105); 
+}
+
+.card-btn:hover {
+    background-color: rgba(180, 90, 105, 0.1);
+}
+
+
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 100%; /* Full width on small screens */
+        max-width: 100%; /* Ensure the card takes the full width */
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .card {
+        flex: 1 1
+    }
+}

@@ -1,16 +1,7 @@
-// lib/api/products.js
-export async function fetchProducts() {
-  const response = await fetch("/api/products");
+export async function fetchProducts(params) {
+  const response = await fetch(`/api/products?${params}`);
   if (!response.ok) {
     throw new Error("Failed to fetch products");
-  }
-  return await response.json();
-}
-
-export async function fetchProductById(id) {
-  const response = await fetch(`/api/products/${id}`);
-  if (!response.ok) {
-    throw new Error("Failed to fetch product");
   }
   return await response.json();
 }
@@ -27,8 +18,8 @@ export async function createProduct(productData) {
   return await response.json();
 }
 
-export async function updateProduct(id, productData) {
-  const response = await fetch(`/api/products/${id}`, {
+export async function updateProduct(params) {
+  const response = await fetch(`/api/products?${params}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(productData),
@@ -39,8 +30,8 @@ export async function updateProduct(id, productData) {
   return await response.json();
 }
 
-export async function deleteProduct(id) {
-  const response = await fetch(`/api/products/${id}`, {
+export async function deleteProduct(params) {
+  const response = await fetch(`/api/products?${params}`, {
     method: "DELETE",
   });
   if (!response.ok) {

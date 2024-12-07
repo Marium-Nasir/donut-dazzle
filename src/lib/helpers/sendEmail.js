@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 
-export async function sendEmail({ params }) {
+export async function sendEmail(params) {
   try {
     const { smtp_email, smtp_password } = process.env;
     const transport = await nodemailer.createTransport({
@@ -10,20 +10,15 @@ export async function sendEmail({ params }) {
         pass: smtp_password,
       },
     });
-    const testTransport = await transport.verify();
-    console.log(testTransport);
-
-    const sendMail = await nodemailer.sendEmail({
+    await transport.sendMail({
       from: smtp_email,
       to: params.to,
       subject: params.subject,
       html: params.body,
     });
-    console.log(sendMail);
-
     return true;
   } catch (err) {
-    console.log(`error in sending email`);
+    console.log(`error in sending email`, err);
     return false;
   }
 }
